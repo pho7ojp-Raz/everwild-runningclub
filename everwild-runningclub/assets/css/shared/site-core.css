@@ -1,0 +1,468 @@
+:root {
+  --brand-hot: #ff0064;
+  --brand-shift: #a050a0;
+  --brand: var(--brand-hot);
+  --brand-two: var(--brand-shift);
+  --white: #ffffff;
+  --line: rgba(255, 255, 255, 0.08);
+  --card-radius: 10px;
+  --content-width: min(1380px, calc(100vw - clamp(1.5rem, 3vw, 3rem)));
+  --header-top-gap: clamp(1rem, 1.9vw, 1.45rem);
+  --header-side-gap: clamp(1.3rem, 2.35vw, 1.8rem);
+  --header-width: calc(100vw - (var(--header-side-gap) * 2));
+  --header-shell-radius: 999px;
+  --header-shell-gap: 1rem;
+  --header-shell-padding-y: 0.36rem;
+  --header-shell-padding-x: 0.92rem;
+  --header-shell-background: rgba(30, 36, 46, 0.18);
+  --header-shell-backdrop: blur(24px) saturate(145%);
+  --header-shell-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  --header-brand-offset: 0.48rem;
+  --header-brand-gap: 0.98rem;
+  --header-brand-mark-offset: 0.18rem;
+  --header-brand-mark-shift: 2%;
+  --header-brand-mark-scale: 1.08;
+  --header-nav-gap: 1.05rem;
+  --header-font: "Segoe UI Variable", "Segoe UI", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+  --header-link-font-size: 0.86rem;
+  --header-link-letter-spacing: 0.06em;
+  --header-link-weight: 700;
+  --header-signup-padding-y: 0.66rem;
+  --header-signup-padding-x: 0.98rem;
+  --header-lang-shell-padding: 0.2rem;
+  --header-lang-button-padding-y: 0.46rem;
+  --header-lang-button-padding-x: 0.84rem;
+  --font-latin: "Segoe UI Variable", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-zh: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Source Han Sans SC", "Hiragino Sans GB", "Segoe UI", sans-serif;
+  --font-ja: "Noto Sans JP", "Meiryo", "Yu Gothic UI", "Yu Gothic", "Hiragino Sans", "Segoe UI", sans-serif;
+  --font-latin-apple: Arial, "Helvetica Neue", sans-serif;
+  --font-zh-apple: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", sans-serif;
+  --font-ja-apple: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  --ui-font: var(--font-ja);
+  --heading-font: var(--font-ja);
+  --body-font: var(--font-ja);
+  --font-body-weight: 400;
+  --font-heading-weight: 650;
+  --font-strong-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 17px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-weight: var(--font-body-weight);
+}
+
+html:lang(zh),
+html[lang^="zh-"] {
+  --ui-font: var(--font-zh);
+  --heading-font: var(--font-zh);
+  --body-font: var(--font-zh);
+}
+
+html:lang(en),
+html[lang^="en-"] {
+  --ui-font: var(--font-latin);
+  --heading-font: var(--font-latin);
+  --body-font: var(--font-latin);
+}
+
+html:lang(ja),
+html[lang^="ja-"] {
+  --ui-font: var(--font-ja);
+  --heading-font: var(--font-ja);
+  --body-font: var(--font-ja);
+  --font-body-weight: 450;
+  --font-heading-weight: 690;
+  --font-strong-weight: 730;
+  --header-link-weight: 720;
+}
+
+html[data-platform="apple"] {
+  --font-body-weight: 430;
+  --font-heading-weight: 680;
+  --font-strong-weight: 720;
+  --header-link-weight: 720;
+}
+
+html[data-platform="apple"]:lang(zh),
+html[data-platform="apple"][lang^="zh-"] {
+  --ui-font: var(--font-zh-apple);
+  --heading-font: var(--font-zh-apple);
+  --body-font: var(--font-zh-apple);
+}
+
+html[data-platform="apple"]:lang(en),
+html[data-platform="apple"][lang^="en-"] {
+  --ui-font: var(--font-latin-apple);
+  --heading-font: var(--font-latin-apple);
+  --body-font: var(--font-latin-apple);
+}
+
+html[data-platform="apple"]:lang(ja),
+html[data-platform="apple"][lang^="ja-"] {
+  --ui-font: var(--font-ja-apple);
+  --heading-font: var(--font-ja-apple);
+  --body-font: var(--font-ja-apple);
+  --font-body-weight: 455;
+  --font-heading-weight: 700;
+  --font-strong-weight: 740;
+  --header-link-weight: 730;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.shell {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: var(--header-top-gap);
+  z-index: 100;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+}
+
+.site-header .shell {
+  width: var(--header-width);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--header-shell-gap);
+  padding: var(--header-shell-padding-y) var(--header-shell-padding-x);
+  border-radius: var(--header-shell-radius);
+  border: 0;
+  background: var(--header-shell-background);
+  backdrop-filter: var(--header-shell-backdrop);
+  box-shadow: var(--header-shell-shadow);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--header-brand-gap);
+  min-width: 0;
+  margin-left: var(--header-brand-offset);
+}
+
+.brand-mark {
+  width: 4.8rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  flex: 0 0 auto;
+  margin-left: var(--header-brand-mark-offset);
+}
+
+.brand-mark img {
+  grid-area: 1 / 1;
+  width: 126%;
+  height: auto;
+  display: block;
+  max-width: none;
+  transform: translateX(var(--header-brand-mark-shift)) scale(var(--header-brand-mark-scale));
+  transform-origin: center center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.brand-mark .brand-mark-hover {
+  opacity: 0;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+  color: var(--white);
+}
+
+.brand-copy strong {
+  font-family: var(--header-font);
+  font-size: 1.36rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  font-weight: 700;
+  color: var(--white);
+  transition: color 180ms ease;
+}
+
+.brand-copy span {
+  font-family: var(--header-font);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.66);
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.brand:hover .brand-mark-default,
+.brand:focus-visible .brand-mark-default {
+  opacity: 0;
+}
+
+.brand:hover .brand-mark-hover,
+.brand:focus-visible .brand-mark-hover {
+  opacity: 1;
+}
+
+.brand:hover .brand-copy strong,
+.brand:hover .brand-copy span,
+.brand:focus-visible .brand-copy strong,
+.brand:focus-visible .brand-copy span {
+  color: var(--brand-hot);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--header-shell-gap);
+  min-width: 0;
+  margin-left: auto;
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--header-nav-gap);
+  flex-wrap: nowrap;
+  justify-content: center;
+  min-width: 0;
+  transform: translate(-50%, -50%);
+}
+
+.nav-links a,
+.nav-link {
+  font-family: var(--header-font);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--header-link-font-size);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: var(--header-link-letter-spacing);
+  text-transform: none;
+  transition: color 180ms ease;
+}
+
+.nav-links a:not(.nav-signup):hover,
+.nav-links a:not(.nav-signup):focus-visible,
+.nav-links a.is-current:not(.nav-signup),
+.nav-link:not(.nav-signup):hover,
+.nav-link:not(.nav-signup):focus-visible,
+.nav-link.is-current:not(.nav-signup) {
+  color: #ffffff;
+}
+
+.nav-signup {
+  order: 99;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: var(--header-signup-padding-y) var(--header-signup-padding-x);
+  border-radius: var(--header-shell-radius);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--white) !important;
+  box-shadow: 0 12px 24px rgba(255, 0, 100, 0.18);
+  transition:
+    color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-signup::before,
+.nav-signup::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.nav-signup::before {
+  z-index: -2;
+  background: linear-gradient(135deg, var(--brand-hot), var(--brand-shift));
+  opacity: 1;
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-signup::after {
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(255, 0, 100, 0.16), rgba(160, 80, 160, 0.12));
+  opacity: 0;
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-signup:hover,
+.nav-signup:focus-visible {
+  color: var(--white) !important;
+  border-color: rgba(255, 0, 100, 0.72);
+  box-shadow:
+    0 12px 24px rgba(255, 0, 100, 0.12),
+    0 0 0 1px rgba(255, 0, 100, 0.18) inset;
+  transform: none;
+}
+
+.nav-signup:hover::before,
+.nav-signup:focus-visible::before {
+  opacity: 0;
+}
+
+.nav-signup:hover::after,
+.nav-signup:focus-visible::after {
+  opacity: 1;
+}
+
+.nav-social {
+  order: 0;
+}
+
+.lang-toggle {
+  position: absolute;
+  right: calc(var(--header-shell-padding-x) + 0.78rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.lang-toggle button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: var(--header-font);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.74);
+  background: transparent;
+  transition: color 180ms ease;
+  font-size: var(--header-link-font-size);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: var(--header-link-letter-spacing);
+}
+
+.lang-toggle button + button::before {
+  content: "";
+  position: absolute;
+  left: -0.48rem;
+  top: 50%;
+  width: 1px;
+  height: 0.8em;
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.lang-toggle button.is-active {
+  color: var(--white);
+}
+
+.lang-toggle button:hover,
+.lang-toggle button:focus-visible {
+  color: var(--brand-hot);
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 17.5px;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --content-width: min(1480px, calc(100vw - 2.25rem));
+  }
+
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: 16.25px;
+  }
+
+  :root {
+    --header-top-gap: 0.95rem;
+    --header-side-gap: 1.15rem;
+  }
+
+  .site-header .shell {
+    flex-wrap: wrap;
+    padding: 0.82rem 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .site-header .shell,
+  .header-actions,
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    position: static;
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transform: none;
+  }
+
+  .lang-toggle {
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+}

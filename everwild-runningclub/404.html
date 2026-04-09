@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#07090d">
+  <title>EVERWILD &middot; 404</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/images/logo/favicon-white-square.png">
+  <link rel="apple-touch-icon" href="./assets/images/logo/favicon-white-square.png">
+  <link rel="stylesheet" href="./assets/css/shared/site-core.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(255, 0, 100, 0.12), transparent 22%),
+        radial-gradient(circle at 82% 12%, rgba(160, 80, 160, 0.12), transparent 24%),
+        linear-gradient(180deg, #06070b 0%, #0b0e14 100%);
+      color: var(--white);
+    }
+
+    .not-found {
+      width: min(40rem, calc(100vw - 2rem));
+      padding: 2rem;
+      border-radius: 2rem;
+      background: rgba(13, 17, 24, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .not-found__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .not-found__eyebrow::before {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand-hot), var(--brand-shift));
+    }
+
+    h1 {
+      margin: 1rem 0 0.8rem;
+      font-family: var(--heading-font);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1;
+      color: var(--white);
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 30rem;
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.8;
+    }
+
+    .not-found__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .not-found__actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease;
+    }
+
+    .not-found__actions a:hover {
+      transform: translateY(-2px);
+    }
+
+    .not-found__actions a:first-child {
+      background: linear-gradient(135deg, var(--brand-hot), var(--brand-shift));
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(255, 0, 100, 0.22);
+    }
+
+    .not-found__actions a:last-child {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <span class="not-found__eyebrow">Not Found</span>
+    <h1>404</h1>
+    <p>The page you are looking for could not be found. Head back home or open the signup page to keep moving through the ERC site.</p>
+    <div class="not-found__actions">
+      <a href="./index.html">Back Home</a>
+      <a href="./signup/index.html">Open Signup</a>
+    </div>
+  </main>
+</body>
+</html>
