@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ERC の参加フォームに入力し、参加メッセージを整えて小紅書から送信できます。">
+  <meta name="theme-color" content="#07090d">
+  <title>EVERWILD · 参加登録</title>
+  <link rel="canonical" href="https://www.everwild-runningclub.com/signup/">
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/images/logo/favicon-white-square.png">
+  <link rel="apple-touch-icon" href="../assets/images/logo/favicon-white-square.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EVERWILD">
+  <meta property="og:title" content="EVERWILD · 参加登録">
+  <meta property="og:description" content="ERC の参加フォームに入力し、参加メッセージを整えて小紅書から送信できます。">
+  <meta property="og:url" content="https://www.everwild-runningclub.com/signup/">
+  <meta property="og:image" content="https://www.everwild-runningclub.com/assets/images/logo/everwild-horizontal-white.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="EVERWILD · 参加登録">
+  <meta name="twitter:description" content="ERC の参加フォームに入力し、参加メッセージを整えて小紅書から送信できます。">
+  <meta name="twitter:image" content="https://www.everwild-runningclub.com/assets/images/logo/everwild-horizontal-white.png">
+  <link rel="stylesheet" href="../assets/css/shared/site-core.css">
+  <link rel="stylesheet" href="../assets/css/pages/signup.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="../index.html" aria-label="Everwild Running Club">
+        <div class="brand-mark">
+          <img class="brand-mark-default" src="../assets/images/logo/logo-bird-mark-white-centered.png" alt="ERC logo">
+          <img class="brand-mark-hover" src="../assets/images/logo/logo-bird-mark-hot-centered.png" alt="" aria-hidden="true">
+        </div>
+        <div class="brand-copy">
+          <strong>ERC</strong>
+          <span data-i18n="brandLine">Everwild Running Club</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="../index.html#manifesto" data-i18n="navManifesto">关于我们</a>
+          <a href="../index.html#schedule" data-i18n="navSchedule">常规活动</a>
+          <a href="../index.html#routes" data-i18n="navRoutes">东京跑线</a>
+          <a href="../index.html#pacers" data-i18n="navPacers">配速团队</a>
+          <a class="nav-social" href="../index.html#join" data-i18n="navSocial">联系我们</a>
+          <a href="../index.html#shop" data-i18n="navBrands">官方商店</a>
+          <a class="nav-signup" href="#signup" data-i18n="navSignup">立即报名</a>
+        </nav>
+
+        <div class="lang-toggle" aria-label="Language switcher">
+          <button type="button" class="is-active" data-lang-toggle="ja" aria-pressed="true">JA</button>
+          <button type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang-toggle="zh" aria-pressed="false">CN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero" id="top">
+    <div class="hero-grid">
+      <section class="intro-panel">
+        <span class="eyebrow" data-i18n="eyebrow">ERC Signup Flow</span>
+        <h1 data-i18n-html="introTitle">填一份表<br>把报名信息整理好</h1>
+        <p data-i18n="introBody">你填写完成后，页面会自动整理一段报名信息，优先尝试复制到剪贴板，然后带你前往 ERC 的小红书主页，方便你直接私信发送。</p>
+
+        <div class="bullet-list">
+          <article>
+            <strong data-i18n="stepLabelOne">Step 01</strong>
+            <span data-i18n="stepBodyOne">填写你的基本信息、想参加的活动、跑步目标和备注。</span>
+          </article>
+          <article>
+            <strong data-i18n="stepLabelTwo">Step 02</strong>
+            <span data-i18n="stepBodyTwo">提交后页面会自动生成一段适合发送给 ERC 的报名消息。</span>
+          </article>
+          <article>
+            <strong data-i18n="stepLabelThree">Step 03</strong>
+            <span data-i18n="stepBodyThree">打开小红书主页，把消息粘贴发送即可；如果复制失败，页面下方也会保留文本。</span>
+          </article>
+        </div>
+
+        <div class="action-row">
+          <a class="button button-primary" href="https://www.xiaohongshu.com/user/profile/6888df4600000000280300a7" target="_blank" rel="noreferrer" data-i18n="introPrimary">Open Xiaohongshu</a>
+          <a class="button button-secondary" href="../" data-i18n="introSecondary">Back to ERC</a>
+        </div>
+      </section>
+
+      <section class="form-panel" id="signup">
+        <div class="form-head">
+          <h2 data-i18n-html="formTitle">Join<br>ERC</h2>
+          <p data-i18n="formBody">填写完成后，这个页面会帮你准备一份报名摘要。当前版本不会把数据直接发送到服务器，而是为你生成可立即私信发送的内容。</p>
+        </div>
+
+        <form id="signup-form">
+          <div class="field-grid">
+            <div class="field">
+              <label class="is-required" for="name" data-i18n="labelName">称呼</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+
+            <div class="field">
+              <label class="is-required" for="contact" data-i18n="labelContact">微信号/邮箱</label>
+              <input id="contact" name="contact" type="text" required>
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="language" data-i18n="labelLanguage">希望言語</label>
+              <select id="language" name="language">
+                <option value="ja" data-i18n="optionJa">日本語</option>
+                <option value="en" data-i18n="optionEn">English</option>
+                <option value="zh" data-i18n="optionZh">中文</option>
+                <option value="bi" data-i18n="optionBi">Bilingual</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="experience" data-i18n="labelExperience">Running Experience</label>
+              <select id="experience" name="experience">
+                <option value="first" data-i18n="expFirst">第一次参加跑团</option>
+                <option value="steady" data-i18n="expSteady">正在稳定跑步</option>
+                <option value="training" data-i18n="expTraining">有训练目标</option>
+                <option value="race" data-i18n="expRace">正在备赛</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="pace" data-i18n="labelPace">Comfortable Pace</label>
+            <input id="pace" name="pace" type="text" placeholder="e.g. 5:30/km">
+            <span class="field-hint" data-i18n="paceHint">如果暂时不确定，可以写“还不确定”或留空。</span>
+          </div>
+
+          <div class="choice-group">
+            <div class="choice-title is-required" data-i18n="labelSessions">Interested Sessions</div>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="sessions" value="tue_interval"><span data-i18n="sessionTue">周二代代木间歇跑</span></label>
+              <label class="choice"><input type="checkbox" name="sessions" value="thu_threshold"><span data-i18n="sessionThu">周四皇居乳酸阈值跑</span></label>
+              <label class="choice"><input type="checkbox" name="sessions" value="fri_fun"><span data-i18n="sessionFri">周五皇居欢乐跑</span></label>
+              <label class="choice"><input type="checkbox" name="sessions" value="sat_lsd"><span data-i18n="sessionSatLsd">周六东京周边 LSD</span></label>
+              <label class="choice"><input type="checkbox" name="sessions" value="sat_newcomer"><span data-i18n="sessionSatNew">周六皇居新人募集跑</span></label>
+            </div>
+          </div>
+
+          <div class="choice-group">
+            <div class="choice-title" data-i18n="labelGoals">Goals</div>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" name="goals" value="training"><span data-i18n="goalTraining">训练</span></label>
+              <label class="choice"><input type="checkbox" name="goals" value="health"><span data-i18n="goalHealth">健康</span></label>
+              <label class="choice"><input type="checkbox" name="goals" value="race"><span data-i18n="goalRace">备战</span></label>
+              <label class="choice"><input type="checkbox" name="goals" value="social"><span data-i18n="goalSocial">社交</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="notes" data-i18n="labelNotes">Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+            <span class="field-hint" data-i18n="notesHint">可以填写伤病情况、想先参加哪次活动、是否第一次在东京参加跑团等。</span>
+          </div>
+
+          <label class="consent">
+            <input id="consent" name="consent" type="checkbox" required>
+            <span class="is-required" data-i18n="consentText">我理解当前页面会先整理并复制报名信息，最终确认仍以 ERC 的回复和活动安排为准。</span>
+          </label>
+
+          <button class="button button-primary" type="submit" data-i18n="submitLabel">Prepare Signup Message</button>
+        </form>
+
+        <section id="status" class="status" aria-live="polite">
+          <strong id="status-title" data-i18n="statusTitle">Your message is ready.</strong>
+          <p id="status-copy" data-i18n="statusBody">如果浏览器允许，报名信息已经复制到剪贴板。你现在可以打开小红书并直接粘贴发送。</p>
+          <textarea id="output" class="output-box" readonly></textarea>
+          <div class="helper-row">
+            <a class="button button-primary" href="https://www.xiaohongshu.com/user/profile/6888df4600000000280300a7" target="_blank" rel="noreferrer" data-i18n="statusPrimary">Open Xiaohongshu</a>
+            <button id="copy-button" class="button button-secondary" type="button" data-i18n="statusSecondary">Copy Again</button>
+          </div>
+        </section>
+        <div id="redirect-popup" class="redirect-popup" aria-hidden="true" role="alertdialog" aria-live="assertive" aria-modal="true">
+          <div class="redirect-popup__panel">
+            <strong id="redirect-popup-title" data-i18n="redirectPopupTitle">报名信息已复制</strong>
+            <p id="redirect-popup-copy" data-i18n="redirectPopupBody">报名信息已复制。现在可以打开小红书，把刚刚复制的内容直接粘贴发送。</p>
+            <div class="redirect-popup__actions">
+              <a id="redirect-popup-open" class="button button-primary" href="https://www.xiaohongshu.com/user/profile/6888df4600000000280300a7" target="_blank" rel="noreferrer" data-i18n="redirectPopupPrimary">前往小红书发送</a>
+              <button id="redirect-popup-close" class="button button-secondary" type="button" data-i18n="redirectPopupSecondary">留在此页</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../assets/js/shared/site-i18n.js"></script>
+  <script src="../assets/js/pages/signup.js"></script>
+</body>
+</html>
+
